@@ -1,0 +1,15 @@
+import numpy as np
+
+def calc_bmi_arrays(sample_indices, hts, wts):
+
+    # Gather sample heights and weights as NumPy arrays
+    s_hts = hts[sample_indices]
+    s_wts = wts[sample_indices]
+
+    # Convert heights from cm to m and square using NumPy operations
+    s_hts_m_sqr = (s_hts / 100) ** 2
+
+    # Calculate BMIs using NumPy operations
+    bmis = s_wts / s_hts_m_sqr
+
+    return bmis
